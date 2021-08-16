@@ -4,9 +4,6 @@ import {
   Get,
   Param,
   Post,
-  HttpCode,
-  HttpStatus,
-  Res,
   Patch,
   Delete,
   Query,
@@ -22,14 +19,9 @@ export class CoffeesController {
 
   @Get()
   findAll(@Query() paginationQuery: PaginationQueryDto) {
-    const { limit, offset } = paginationQuery;
+    // const { limit, offset } = paginationQuery;
     return this.coffeesService.findAll(paginationQuery);
   }
-
-  // @Get('flavors')
-  // findAll(@Res() response) {
-  //   return response.status(200).send({ msg: 'This action return all coffees' });
-  // }
 
   @Get(':id')
   findOne(@Param('id') id: number) {
