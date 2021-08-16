@@ -100,7 +100,7 @@ export class CoffeesService {
     await queryRunner.startTransaction();
 
     try {
-      coffee.recomendations++;
+      coffee.recommendations++;
 
       const recommendEvent = new Event();
       recommendEvent.name = 'recommended_coffee';
